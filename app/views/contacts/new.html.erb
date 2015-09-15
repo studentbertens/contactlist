@@ -1,18 +1,26 @@
+
+<div class="container">
+
+<div class="well">
  <%= form_for @contact do |f| %>
 
  <%= f.label :name, "Nombre Completo"%>
  <%= f.text_field :name %>
 
+</div>
 
-<div>
+<div class ="well">
   <%= f.fields_for :emails do |email| %>
+  <%= f.label :name, "Correo Electronico"%>
     <%= render 'email_fields', f: email %>
+    <div class="btn btn-default">
     <%= link_to_add_association 'Añadir Mail', f,  :emails %>
+    </div>
 
   <% end %>
 </div>
 
-<div>
+<div class ="well">
   <%= f.fields_for :phones do |phone| %>
     <%= render 'phone_fields', f: phone %>
     <%= link_to_add_association 'Añadir Telefono', f,  :phones %>
@@ -20,7 +28,7 @@
   <% end %>
 </div>
 
-<div>
+<div class ="well">
   <%= f.fields_for :links do |link| %>
     <%= render 'link_fields', f: link %>
     <%= link_to_add_association 'Añadir Link', f,  :links %>
@@ -28,7 +36,7 @@
   <% end %>
 </div>
 
-<div>
+<div class ="well">
   <%= f.fields_for :addresses do |address| %>
     <%= render 'address_fields', f: address %>
     <%= link_to_add_association 'Añadir Direccion', f,  :addresses %>
@@ -36,9 +44,11 @@
   <% end %>
 </div>
 
-<div>
+<div class ="well">
 <%= f.label :note, "Nota"%>
 <%= f.text_area :note %>
 <%= f.submit%>
 </div>
 <% end %>
+
+</div>

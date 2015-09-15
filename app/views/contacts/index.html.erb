@@ -1,8 +1,34 @@
+
+
 <% @contacts.each do |c| %>
+
+<div class="container">
 <%= c.name %>
-<%= link_to "Editar", edit_contact_path(c) %>
-<%= link_to "Ver", contact_path(c) %>
-<%=link_to "Eliminar", contact_path(c), method: :delete, data: {confirm: "Estas seguro de eliminar este contacto?"} %> </br>
+
+<div class="row">
+
+<div class="well">
+  <div class="btn">
+  <%= link_to "Editar", edit_contact_path(c) %>
+  </div>
+</div>
+<div class="well">
+  <div class="btn">
+    <%= link_to "Ver", contact_path(c) %>
+    </div>
+    </div>
+    <div class="well">
+      <div class="btn">
+        <%=link_to "Eliminar", contact_path(c), method: :delete, data: {confirm: "Estas seguro de eliminar este contacto?"} %> </br>
+      </div>
+    </div>
+</div>
 <% end %>
 
-<%= link_to "Nuevo Contacto", new_contact_path %>
+
+
+<div class="well">
+  <div class="btn">
+    <%= link_to "Nuevo Contacto", new_contact_path %>
+  </div>
+</div>

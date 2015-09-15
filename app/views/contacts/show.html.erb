@@ -1,11 +1,11 @@
-<div>
+<div class="container">
   <h1> <%= @contact.name %> </h1>
   <%= link_to "Editar", edit_contact_path(@contact) %>
 
-</div>
 
-<div>
- <h3> Email </h3>
+
+<div class="well">
+   <h3> Email </h3>
  <% @emails.each do |e| %>
  <ul>
    <li>
@@ -15,8 +15,8 @@
 <% end %>
 </div>
 
-<div>
- <h3> Phone </h3>
+<div class="well">
+   <h3> Phone </h3>
  <% @phones.each do |e| %>
  <ul>
    <li>
@@ -26,7 +26,7 @@
 <% end %>
 </div>
 
-<div>
+<div class="well">
  <h3> Link </h3>
  <% @links.each do |e| %>
  <ul>
@@ -37,7 +37,7 @@
 <% end %>
 </div>
 
-<div>
+<div class="well">
  <h3> Address </h3>
  <% @addresses.each do |e| %>
  <ul>
@@ -48,5 +48,8 @@
 <% end %>
 </div>
 
+<div class="well">
 <h3> Nota </h3>
 <%= @contact.note %>
+</div>
+</div>
