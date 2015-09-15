@@ -3,7 +3,7 @@
   <%= link_to "Editar", edit_contact_path(@contact) %>
 
 
-
+<div class="row">
 <div class="well">
    <h3> Email </h3>
  <% @emails.each do |e| %>
@@ -51,5 +51,6 @@
 <div class="well">
 <h3> Nota </h3>
 <%= @contact.note %>
+</div>
 </div>
 </div>
