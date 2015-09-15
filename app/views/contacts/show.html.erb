@@ -1,0 +1,52 @@
+<div>
+  <h1> <%= @contact.name %> </h1>
+  <%= link_to "Editar", edit_contact_path(@contact) %>
+
+</div>
+
+<div>
+ <h3> Email </h3>
+ <% @emails.each do |e| %>
+ <ul>
+   <li>
+     <%= e.email %>
+   </li>
+ </ul>
+<% end %>
+</div>
+
+<div>
+ <h3> Phone </h3>
+ <% @phones.each do |e| %>
+ <ul>
+   <li>
+     <%= e.phone %>
+   </li>
+ </ul>
+<% end %>
+</div>
+
+<div>
+ <h3> Link </h3>
+ <% @links.each do |e| %>
+ <ul>
+   <li>
+     <%= e.link %>
+   </li>
+ </ul>
+<% end %>
+</div>
+
+<div>
+ <h3> Address </h3>
+ <% @addresses.each do |e| %>
+ <ul>
+   <li>
+     <%= e.address %>
+   </li>
+ </ul>
+<% end %>
+</div>
+
+<h3> Nota </h3>
+<%= @contact.note %>

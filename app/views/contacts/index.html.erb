@@ -1,0 +1,8 @@
+<% @contacts.each do |c| %>
+<%= c.name %>
+<%= link_to "Editar", edit_contact_path(c) %>
+<%= link_to "Ver", contact_path(c) %>
+<%=link_to "Eliminar", contact_path(c), method: :delete, data: {confirm: "Estas seguro de eliminar este contacto?"} %> </br>
+<% end %>
+
+<%= link_to "Nuevo Contacto", new_contact_path %>

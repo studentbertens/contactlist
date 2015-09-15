@@ -1,1 +1,43 @@
- 
+ <%= form_for @contact do |f| %>
+
+ <%= f.label :name, "Nombre Completo"%>
+ <%= f.text_field :name %>
+
+
+<div>
+  <%= f.fields_for :emails do |email| %>
+    <%= render 'email_fields', f: email %>
+    <%= link_to_add_association 'Añadir Mail', f,  :emails %>
+
+  <% end %>
+</div>
+
+<div>
+  <%= f.fields_for :phones do |phone| %>
+    <%= render 'phone_fields', f: phone %>
+    <%= link_to_add_association 'Añadir Telefono', f,  :phones %>
+
+  <% end %>
+</div>
+
+<div>
+  <%= f.fields_for :links do |link| %>
+    <%= render 'link_fields', f: link %>
+    <%= link_to_add_association 'Añadir Link', f,  :links %>
+
+  <% end %>
+</div>
+
+<div>
+  <%= f.fields_for :addresses do |address| %>
+    <%= render 'address_fields', f: address %>
+    <%= link_to_add_association 'Añadir Direccion', f,  :addresses %>
+
+  <% end %>
+</div>
+
+<%= f.label :note, "Nota"%>
+<%= f.text_area :note %>
+<%= f.submit%>
+
+<% end %>
