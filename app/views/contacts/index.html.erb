@@ -1,41 +1,40 @@
+<div class="container">
 
+<div class="row">
+  <div class="col-md-4">
+      <div class="btn btn-default">
+        <%= link_to "Nuevo Contacto", new_contact_path %>
+      </div>
+  </div>
+</div>
+
+<hr>
 
 <% @contacts.each do |c| %>
+<div class="container">
+  <div class ="well">
+    <div class="row">
 
-<%= c.name %>
-<div class="row">
-  <div class="col-md-2">
-    <div class="well">
-      <div class="btn btn-default">
-        <%= link_to "Editar", edit_contact_path(c) %>
+      <div class="col-md-2">
+        <h3>
+          <%= c.name %>
+        </h3>
+      </div>
+
+        <div class="col-md-6">
+
+        <div class="btn btn-default">
+          <%= link_to "Editar", edit_contact_path(c) %>
+        </div>
+          <div class="btn btn-default">
+            <%= link_to "Ver", contact_path(c) %>
+          </div>
+          <div class="btn btn-default">
+            <%=link_to "Eliminar", contact_path(c), method: :delete, data: {confirm: "Estas seguro de eliminar este contacto?"} %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-
-  <div class="col-md-2">
-    <div class="well">
-      <div class="btn btn-default">
-    <%= link_to "Ver", contact_path(c) %>
-      </div>
-    </div>
-  </div>
-
-<div class="col-md-2">
-  <div class="well">
-    <div class="btn btn-default">
-        <%=link_to "Eliminar", contact_path(c), method: :delete, data: {confirm: "Estas seguro de eliminar este contacto?"} %>
-      </div>
-    </div>
-</div>
-<hr>
 <% end %>
-
-</div>
-
-<div class="col-md-2">
-  <div class="well">
-    <div class="btn btn-default">
-    <%= link_to "Nuevo Contacto", new_contact_path %>
-    </div>
-  </div>
 </div>

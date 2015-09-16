@@ -4,6 +4,10 @@
 <head>
 	<meta charset="utf-8">
 	<title>Bootstrap For Beginners</title>
+
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
 	<meta name="description" content="Hello World">
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -23,10 +27,37 @@
 </head>
 
 <body>
+
+	<header>
+		<div class="jumbotron">
+			<div class="container">
+				<h1>Lista de Contactos</h1>
+				<h3>World Tech Makers Chile 2015</h3>
+			</div>
+		</div>
+	</header>
+
   <%= yield %>
 
 	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
+
+	<footer>
+		<div class="container">
+			<hr>
+
+			<p>
+				<small><a href="http://facebook.com/askorama">Like me</a> On facebook</small></p>
+			<p>	<small><a href="http://twitter.com/wiredwiki">Ask whatever </a> On Twitter</small></p>
+			<p>	<small><a href="http://youtube.com/wiredwiki">Subscribe me</a> On Youtube</small>
+
+			</p>
+		</div> <!-- end container -->
+	</footer>
+
 </body>
+
+
+
 </html>
